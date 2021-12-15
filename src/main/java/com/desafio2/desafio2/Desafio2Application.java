@@ -40,10 +40,24 @@ public class Desafio2Application implements CommandLineRunner{
 		productos.add(producto2);
 		
 		//Creación de pedidos
-		List<Order> orders = new ArrayList<>();
 		Order order1 = new Order();
-        
-    	System.err.println("Total " + servicios.calcularTotal());
+		order1.setIdentify(1L);
+		order1.setDestination("Huelva");
+		order1.setAddress("calle");
+		order1.setMelilla(false);
+		order1.setProduct(productos);
+		
+		Order order2 = new Order();
+		order2.setIdentify(1L);
+		order2.setDestination("Huelva");
+		order2.setAddress("calle");
+		order2.setMelilla(true);
+		order2.setProduct(productos);
+
+		//Muestra por pantalla
+    	System.err.println("Total Peninsula " + servicios.calcularTotal(order1));
+    	System.err.println("Total Melilla " + servicios.calcularTotal(order2));
+    	
     }
 
 }

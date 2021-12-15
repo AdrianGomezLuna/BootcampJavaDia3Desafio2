@@ -1,11 +1,9 @@
 package com.desafio2.desafio2.services;
 
-import java.util.List;
-
-import com.desafio2.desafio2.model.Product;
+import com.desafio2.desafio2.model.Order;
 
 public interface PeninsuleServiceI {
 	
-	public List<Product> obtenerProduct();
+	public Double obtenerTotal(Order order);
 
 }

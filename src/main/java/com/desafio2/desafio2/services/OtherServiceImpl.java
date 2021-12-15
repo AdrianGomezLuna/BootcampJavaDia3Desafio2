@@ -7,16 +7,16 @@ import com.desafio2.desafio2.model.Order;
 @Service
 public class OtherServiceImpl implements OtherServiceI{
 
-	@Override
-	public Order obtenerOrder() {
 	
-		Order order = new Order();
-		order.setIdentify(1L);
-		order.setDestination("Huelva");
-		order.setAddress("calle");
-		order.setMelilla(false);
+	@Override
+	public Double obtenerTotal(Order order) {
+		Double total = 0D;
 		
-		return order;
+		for (int i = 0; i < order.getProduct().size(); i++) {
+			total = total + order.getProduct().get(i).getPrice();
+		}
+				
+		return total*1.04;
 	}
 
 }

@@ -1,22 +1,22 @@
 package com.desafio2.desafio2.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
-import com.desafio2.desafio2.model.Product;
+import com.desafio2.desafio2.model.Order;
 
 @Service
 public class PeninsuleServiceImpl implements PeninsuleServiceI{
 
 	@Override
-	public List<Product> obtenerProduct() {
+	public Double obtenerTotal(Order order) {				
+		
+		Double total = 0D;		
+		
+		for (int i = 0; i < order.getProduct().size(); i++) {
+			total = total + order.getProduct().get(i).getPrice();
+		}
 
-		List<Product> lista = new ArrayList<>();
-		
-		
-		return lista;
+		return total*1.21;
 	}
 
 }
